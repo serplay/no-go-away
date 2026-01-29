@@ -24,8 +24,8 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-// Serve static assets
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+// Serve favicon
+app.use('/favicon.ico', express.static(path.join(__dirname, 'assets/imgs/favicon.ico')));
 
 // Random rejection reason endpoint (API)
 app.get('/no', (req, res) => {
@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/assets/imgs/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
   <title>nope</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
